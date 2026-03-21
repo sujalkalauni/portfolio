@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Sujal Kalauni</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 10px;
+        }
+        .blog-card {
+            padding: 30px;
+            background: transparent;
+            border: 2px solid #333;
+            border-radius: 15px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            display: block;
+        }
+        .blog-card:hover {
+            border-color: #e0e0e0;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .blog-card .blog-date {
+            font-size: 0.8rem;
+            color: #666;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .blog-card h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .blog-card p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+        .blog-tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px 12px;
+            border: 1px solid #444;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #888;
+            letter-spacing: 1px;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #555;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>BLOG</h1>
+        <div class="blog-grid">
+
+            <!-- BLOG POST CARD — duplicate this block to add a new post -->
+            <a href="blog/how-k-anonymity-keeps-your-password-private.html" class="blog-card">
+                <div class="blog-date">March 21, 2026</div>
+                <h3>How k-Anonymity Keeps Your Password Private</h3>
+                <p>A deep dive into how the HIBP API lets you check breaches without ever sending your real password.</p>
+                <span class="blog-tag">Cybersecurity</span>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Circular Menu Button -->
+    <div class="menu-button" id="menuButton">
+        <img src="unnamed.png" alt="Menu" class="menu-logo">
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="focus.html">Focus</a></li>
+            <li><a href="tech-stack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Connect</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const navMenu = document.getElementById('navMenu');
+        if (menuButton && navMenu) {
+            menuButton.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+            document.addEventListener('click', (e) => {
+                if (!menuButton.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
