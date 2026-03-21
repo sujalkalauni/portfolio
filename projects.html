@@ -18,7 +18,7 @@
                 <h3>Portfolio Website</h3>
                 <p>Modern responsive portfolio with clean design</p>
             </a>
-                        <a href="https://github.com/sujalkalauni/password-analyzer" class="project-card">
+            <a href="https://github.com/sujalkalauni/password-analyzer" class="project-card">
                 <h3>Password Strength Analyzer & Breach Checker</h3>
                 <p>Analyzes password strength and checks breaches via HIBP API using k-anonymity</p>
             </a>
@@ -38,10 +38,22 @@
             <li><a href="focus.html">Focus</a></li>
             <li><a href="tech-stack.html">Tech Stack</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Connect</a></li>
         </ul>
     </nav>
 
-    <script src="script.js"></script>
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const navMenu = document.getElementById('navMenu');
+        if (menuButton && navMenu) {
+            menuButton.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+            document.addEventListener('click', (e) => {
+                if (!menuButton.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
